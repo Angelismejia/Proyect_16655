@@ -1,0 +1,32 @@
+﻿@model IEnumerable<PsychologyConsultation.Domain.Entities.Paciente>
+
+<h2>Pacientes</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Fecha de Nacimiento</th>
+            <th>Teléfono</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var paciente in Model)
+        {
+            <tr>
+                <td>@paciente.Nombre</td>
+                <td>@paciente.Apellido</td>
+                <td>@paciente.FechaNacimiento.ToShortDateString()</td>
+                <td>@paciente.Telefono</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@paciente.PacienteID">Editar</a>
+                    <a asp-action="Delete" asp-route-id="@paciente.PacienteID">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-action="Create">Agregar Paciente</a>
