@@ -14,7 +14,7 @@ namespace PsychologyConsultation.Domain.Entities
         public DateTime? FechaInicio { get; set; } 
         public DateTime? FechaFin { get; set; }
         public string Estado { get; set; } = null!;
-        public virtual Consulta Consulta { get; set; } = null!; // Relación con Consulta
+        public virtual Consulta Consulta { get; set; } = null!; 
     }
 
 }

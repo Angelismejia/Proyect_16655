@@ -53,6 +53,6 @@ public class PacientesController : ControllerBase
         if (paciente == null) return NotFound();
         _context.Pacientes.Remove(paciente);
         await _context.SaveChangesAsync();
-        return NoContent()
+        return NoContent();
     }
 }
